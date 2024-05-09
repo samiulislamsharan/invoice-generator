@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('item_code')->unique();
             $table->text('description');
             $table->double('unit_price');
+            
             $table->timestamps();
         });
     }

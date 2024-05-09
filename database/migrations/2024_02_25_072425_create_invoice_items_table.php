@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('product_id')->unsigned();
             $table->double('unit_price');
             $table->integer('quantity');
+            
             $table->timestamps();
         });
     }

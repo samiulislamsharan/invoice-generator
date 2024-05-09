@@ -22,6 +22,7 @@ return new class extends Migration
             $table->double('sub_total');
             $table->double('discount')->default(0);
             $table->double('total');
+            
             $table->timestamps();
         });
     }
