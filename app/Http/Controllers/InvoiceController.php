@@ -34,7 +34,7 @@ class InvoiceController extends Controller
         }
     }
 
-    public function create_invoice()
+    public function create_invoice(Request $request)
     {
         $counter = Counter::where('key', 'invoice')->first();
         $random = Counter::where('key', 'invoice')->first();
@@ -42,7 +42,7 @@ class InvoiceController extends Controller
 
         if ($invoice) {
             $invoice = $invoice->id + 1;
-            $counters = $counter->value + 1;
+            $counters = $counter->value + $invoice;
         } else {
             $counters = $counter->value;
         }
@@ -50,11 +50,12 @@ class InvoiceController extends Controller
         $formData = [
             'number' => $counter->prefix . $counters,
             'customer_id' => null,
+            'customer' => null,
             'date' => date('Y-m-d'),
             'due_date' => null,
             'reference' => null,
-            'terms' => 'Default Terms and Conditions',
             'discount' => 0,
+            'terms' => 'Default Terms and Conditions',
             'items' => [
                 [
                     'product_id' => null,
