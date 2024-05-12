@@ -17,8 +17,8 @@ class InvoiceFactory extends Factory
     public function definition(): array
     {
         return [
-            'number' => fake()->numberBetween(10, 100),
-            'customer_id' => fake()->numberBetween(10, 50),
+            'number' => 'INV-' . rand(10, 1000),
+            'customer_id' => fake()->numberBetween(1, 5),
             'date' => fake()->date(),
             'due_date' => fake()->date(),
             'reference' => 'REF-' . rand(10, 1000),
