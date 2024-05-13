@@ -134,9 +134,9 @@ const print = () => {
                     <div class="table--items3" v-for="(item, i) in form.invoice_items" :key="item.id">
                         <p>{{ i + 1 }}</p>
                         <p>{{ item.product.description }}</p>
-                        <p>$ {{ item.unit_price }}</p>
+                        <p>৳ {{ item.unit_price }}</p>
                         <p>{{ item.quantity }}</p>
-                        <p>$ {{ item.unit_price * item.quantity }}</p>
+                        <p>৳ {{ item.unit_price * item.quantity }}</p>
                     </div>
                 </div>
 
@@ -147,11 +147,11 @@ const print = () => {
                     <div>
                         <div class="invoice__subtotal--item1">
                             <p>Sub Total</p>
-                            <span> $ {{ form.sub_total }}</span>
+                            <span>৳ {{ form.sub_total }}</span>
                         </div>
                         <div class="invoice__subtotal--item2">
                             <p>Discount</p>
-                            <span>$ {{ form.discount }}</span>
+                            <span>৳ {{ form.discount }}</span>
                         </div>
 
                     </div>
@@ -166,7 +166,7 @@ const print = () => {
                         <div class="grand__total">
                             <div class="grand__total--items">
                                 <p>Grand Total</p>
-                                <span>$ {{ form.total }}</span>
+                                <span>৳ {{ form.total }}</span>
                             </div>
                         </div>
                     </div>
