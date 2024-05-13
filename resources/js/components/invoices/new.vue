@@ -168,7 +168,7 @@ const saveInvoice = async () => {
                             <input type="text" class="input" v-model="item_cart.quantity" />
                         </p>
                         <p v-if="item_cart.quantity">
-                            $ {{ (item_cart.quantity) * (item_cart.unit_price) }}
+                            ৳ {{ (item_cart.quantity) * (item_cart.unit_price) }}
                         </p>
                         <p v-else> 0 </p>
                         <p style="color: red; font-size: 24px; cursor: pointer" @click="removeItem(i)">
@@ -190,7 +190,7 @@ const saveInvoice = async () => {
                     <div>
                         <div class="table__footer--subtotal">
                             <p>Sub Total</p>
-                            <span>$ {{ subTotal() }}</span>
+                            <span>৳ {{ subTotal() }}</span>
                         </div>
                         <div class="table__footer--discount">
                             <p>Discount</p>
@@ -198,7 +198,7 @@ const saveInvoice = async () => {
                         </div>
                         <div class="table__footer--total">
                             <p>Grand Total</p>
-                            <span>$ {{ grandTotal() }}</span>
+                            <span>৳ {{ grandTotal() }}</span>
                         </div>
                     </div>
                 </div>
@@ -243,4 +243,5 @@ const saveInvoice = async () => {
             </div>
         </div>
     </div>
+    <br><br><br>
 </template>
