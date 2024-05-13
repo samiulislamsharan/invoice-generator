@@ -30,6 +30,20 @@ const print = () => {
 
     })
 }
+
+const editInvoice = (id) => {
+    router.push(`/invoice/edit/${id}`)
+}
+
+const deleteInvoice = (id) => {
+    axios.get(`/api/delete_invoice/${id}`)
+        .then(response => {
+            console.log('response', response.data)
+            router.push('/').catch(() => {
+
+            })
+        })
+}
 </script>
 
 <template>
@@ -63,7 +77,7 @@ const print = () => {
                         </li>
                         <li>
                             <!-- Select Btn Option -->
-                            <button class="selectBtnFlat">
+                            <button class="selectBtnFlat" @click="editInvoice(form.id)">
                                 <i class=" fas fa-reply"></i>
                                 Edit
                             </button>
@@ -71,7 +85,7 @@ const print = () => {
                         </li>
                         <li>
                             <!-- Select Btn Option -->
-                            <button class="selectBtnFlat ">
+                            <button class="selectBtnFlat" @click="deleteInvoice(form.id)">
                                 <i class=" fas fa-pencil-alt"></i>
                                 Delete
                             </button>
