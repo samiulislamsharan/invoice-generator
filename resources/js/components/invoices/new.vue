@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted, ref } from "vue"
-import router from "../../router";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 let form = ref([])
 let all_customers = ref([])
@@ -71,7 +73,11 @@ const subTotal = () => {
 }
 
 const grandTotal = () => {
-    return subTotal() - form.value.discount
+    if (form.value.invoice_items && ((subTotal() - form.value.discount) > 0)) {
+        return subTotal() - form.value.discount
+    } else {
+        return 0
+    }
 }
 
 // This is an asynchronous function named saveInvoice
