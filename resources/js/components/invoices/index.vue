@@ -105,7 +105,7 @@ const showInvoice = async (id) => {
                         No customer
                     </p>
                     <p>{{ item.due_date }}</p>
-                    <p>$ {{ item.total }}</p>
+                    <p>৳ {{ item.total }}</p>
                 </div>
                 <div class="table--items" v-else>
                     <p>No invoices found</p>
