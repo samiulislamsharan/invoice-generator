@@ -73,7 +73,7 @@ const subTotal = () => {
 }
 
 const grandTotal = () => {
-    if (form.value.invoice_items && ((subTotal() - form.value.discount) > 0)) {
+    if ((subTotal() - form.value.discount) > 0) {
         return subTotal() - form.value.discount
     } else {
         return 0
