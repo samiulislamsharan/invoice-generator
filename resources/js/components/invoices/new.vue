@@ -105,7 +105,7 @@ const saveInvoice = async () => {
         formData.append('discount', form.value.discount)
         formData.append('sub_total', subtotal)
         formData.append('total', grandtotal)
-        formData.append('term', form.value.term)
+        formData.append('terms', form.value.terms)
 
         // Make a POST request to the "/api/add_invoice" endpoint, sending the formData as the request body
         axios.post('/api/add_invoice', formData)
@@ -191,7 +191,7 @@ const saveInvoice = async () => {
                 <div class="table__footer">
                     <div class="document-footer">
                         <p>Terms and Conditions</p>
-                        <textarea cols="50" rows="7" class="textarea" v-model="form.term"></textarea>
+                        <textarea cols="50" rows="7" class="textarea" v-model="form.terms"></textarea>
                     </div>
                     <div>
                         <div class="table__footer--subtotal">
