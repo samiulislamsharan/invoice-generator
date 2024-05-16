@@ -149,7 +149,7 @@ const saveInvoice = async () => {
                     </div>
                     <div>
                         <p class="my-1">Number</p>
-                        <input type="text" class="input" v-model="form.number" />
+                        <input disabled type="text" class="input" v-model="form.number" />
                         <p class="my-1">Reference(Optional)</p>
                         <input type="text" class="input" v-model="form.reference" />
                     </div>
