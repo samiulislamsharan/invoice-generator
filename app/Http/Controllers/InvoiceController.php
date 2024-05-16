@@ -140,15 +140,6 @@ class InvoiceController extends Controller
 
         $invoice->invoice_items()->delete();
 
-        // foreach (json_decode($invoiceItem) as $item) {
-        //     $itemData['product_id'] = $item->product_id;
-        //     $itemData['invoice_id'] = $invoice->id;
-        //     $itemData['quantity'] = $item->quantity;
-        //     $itemData['unit_price'] = $item->unit_price;
-
-        //     InvoiceItem::create($itemData);
-        // }
-
         // Check if $invoiceItem is not null and is a valid JSON string
         if ($invoiceItem && is_string($invoiceItem)) {
             $invoiceItemsDecoded = json_decode($invoiceItem);
